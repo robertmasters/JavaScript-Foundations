@@ -37,8 +37,18 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 When your math is correct, monthlyRate will equal 1073.64
 */
 
+//(1) Create a variable called n1 and set it equal to  (1 + monthlyInterestRate )^N
+let n1= Math.pow((1+ monthlyInterestRate),periods);
+// (2) Create a variable called numerator and set it equal to p * n1 * monthlyInterestRate
+let numerator = p * n1 * n1 * monthlyInterestRate;
+// (3) Create a variable called denominator and set it equal to n1 - 1 
+let denominator = n1-1;
+// (4) Create a variable called monthlyRate and set it equal to numerator/denominator
+let monthlyRate = numerator/denominator;
 
+//M = P [ I ( 1 + I )^N ] / [ ( 1 + I )^N – 1 ]
 
+let m = principal(interestRate(n1)) / n1 -1
 
 // 🏡 Task 3: Function
 /* Create a function called `mortgageCalculator` that combines all of the steps from task 1 and 2 and returns a sentence "{Name}, your monthly rate is ${monthlyRate}"
@@ -46,7 +56,9 @@ When your math is correct, monthlyRate will equal 1073.64
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
-
+function mortgageCalculator (){
+    
+}
 
 
 
